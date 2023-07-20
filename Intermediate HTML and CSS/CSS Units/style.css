@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: bisque;
+    font-size: 40px;
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+/* body {
+    font-family: "Roboto";
+} */
+
+div#box {
+    margin: auto;
+    height: 200px;
+    width: 20vw;
+    border: 1px solid black;
+    /* font-size: calc(32px); */
+    font-size: calc(32px + 2vw);
+}
+
+div#bar {
+    width: 80vw;
+    height: 20vh;
+    background-color: chocolate;
+}
+
+div#text {
+    background-color: rgb(137, 202, 156);
+    text-transform: uppercase;
+    text-shadow: 0.5rem 0px rgb(32, 32, 32);;
+}
+
+div#photo {
+    width: 400px;
+    height: 400px;
+
+
+    background: green;
+    background: content-box radial-gradient(red, blue);
+    
+    background: left 5% / 15% 60% repeat-x url("https://www.theodinproject.com/assets/icons/odin-icon-b5b31c073f7417a257003166c98cc23743654715305910c068b93a3bf4d3065d.svg");
+    
+    background: repeat url("https://www.theodinproject.com/assets/icons/odin-icon-b5b31c073f7417a257003166c98cc23743654715305910c068b93a3bf4d3065d.svg");
+    
+
+    border: 1px solid black;
+    border-radius: 50%;
+    box-shadow: 60px 16px teal;
+
+    opacity: 50%;
+
+    
+    
+}
+
+div#text2 {
+    height: 100px;
+    width: 200px;
+    margin-top: 50px;
+    border: 1px solid black;
+    font-size: 16px;
+
+    overflow: visible;
+    overflow: hidden;
+    overflow: clip;
+    overflow: scroll;
+    overflow: auto;
+}
