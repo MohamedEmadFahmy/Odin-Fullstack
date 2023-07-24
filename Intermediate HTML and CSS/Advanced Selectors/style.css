@@ -156,7 +156,7 @@ a:visited {
 
 
 
-/* agive special styling to the first letter or line of some text. */
+/* gives special styling to the first letter or line of some text. */
 ::first-letter{
     color: black;
 }
