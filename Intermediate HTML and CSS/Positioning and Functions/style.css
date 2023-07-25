@@ -22,6 +22,9 @@ div{
 .child-three {
     background-color: rgb(255, 116, 232);
 }
+.child-four {
+    background-color: rgb(255, 206, 116);
+}
 
 
 .parent {
@@ -35,11 +38,29 @@ div{
     top: 40px;
 }
 
+
+
+/* ------------------  Functions  ------------------ */
+
 .child-two {
-    color: black;
+
+    height: calc(100vh - 50px - 50vh + 2vh);
+    height: min(10vh, 150px);
+
+}
+.child-three {
+
+    width: max(500px, 4em, 50vw);
+    
 }
 
-.child-three {
-    /* position: sticky; */
-    color: black;
+/* clamp() is a great way to make elements fluid and responsive. clamp() takes 3 values: */
+
+.child-four {
+  height: clamp(100px, 25vh, 150px);
 }
+
+
+/* the smallest value (320px)
+the ideal value (80vw)
+the largest value (60rem) */
