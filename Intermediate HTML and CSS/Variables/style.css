@@ -1,0 +1,71 @@
+:root {
+    --bg-color: red;
+    --text-color: rgb(255, 255, 255);
+    	
+    /* --page-color: bisque; */
+
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+
+
+    /* fallback value in case variable isnt initialized or has invalid value */
+    background-color: var(--page-color, grey);    
+}
+
+div{
+    width: 300px;
+    height: 300px;
+    font-size: 50px;
+    border: 1px solid black;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+
+/* You can make multiple root rulesets for different themes */
+
+:root.dark {
+    --border-btn: 1px solid rgb(220, 220, 220);
+    --color-base-bg: rgb(18, 18, 18);
+    --color-base-text: rgb(240, 240, 240);
+    --color-btn-bg: rgb(36, 36, 36);
+}
+
+
+:root.light {
+    --border-btn: 1px solid rgb(36, 36, 36);
+    --color-base-bg: rgb(240, 240, 240);
+    --color-base-text: rgb(18, 18, 18);
+    --color-btn-bg: rgb(220, 220, 220);
+}
+
+
+
+/* OR you can use media queries to select a theme based on the device preference */
+
+:root {
+    --border-btn: 1px solid rgb(36, 36, 36);
+    --color-base-bg: rgb(240, 240, 240);
+    --color-base-text: rgb(18, 18, 18);
+    --color-btn-bg: rgb(220, 220, 220);
+    --theme-name: "light";
+}
+  
+@media (prefers-color-scheme: dark) {
+    :root {
+      --border-btn: 1px solid rgb(220, 220, 220);
+      --color-base-bg: rgb(18, 18, 18);
+      --color-base-text: rgb(240, 240, 240);
+      --color-btn-bg: rgb(36, 36, 36);
+      --theme-name: "dark";
+    }
+}
+  
+  
+  
+
