@@ -1,0 +1,43 @@
+body {
+    background-color: rgba(120, 177, 126, 0.747);
+}
+
+form {
+    outline: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+button, input, select, textarea {
+
+    font-family: inherit;
+    font-size: 100%;
+
+    width: 300px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+
+}
+
+[type = "radio"], [type = "checkbox"] {
+    width: auto;
+    margin: auto;
+    padding: auto;
+}
+
+
+/* This makes the legend bottom right instead of top left */
+fieldset {
+    position: relative;
+    width: 300px;
+}
+  
+legend {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
