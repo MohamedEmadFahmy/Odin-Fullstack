@@ -41,3 +41,11 @@ legend {
     bottom: 0;
     right: 0;
 }
+
+input:valid {
+    border: 3px solid green;
+}
+
+input:invalid {
+    border: 3px solid red;
+}

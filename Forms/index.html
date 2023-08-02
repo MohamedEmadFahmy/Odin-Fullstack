@@ -10,7 +10,7 @@
     <form action="https://httpbin.org/post" method="post">
 
         <label for="firstName">First Name</label>
-        <input type="text" id="firstName" placeholder="Enter Your First Name:" name="first_name">
+        <input type="text" id="firstName" placeholder="Enter Your First Name:" name="first_name" required   >
 
 
         <!-- YOU HAVE TO SPECIFY A NAME IN THE INPUT FIELD OTHERWISE THE DATA WILL BE IGNORED -->
@@ -28,7 +28,7 @@
 
 
         <label for="amount">Amount:</label>
-        <input type="number" id="amount" name="amount">
+        <input type="number" id="amount" name="amount" min="10" max="99" value="20">
 
 
 
@@ -118,7 +118,7 @@
 
         <fieldset>
             <label for="first_name">First Name</label>
-            <input type="text" id="first_name" name="first_name">
+            <input type="text" id="first_name" name="first_name" required minlength="3" maxlength="5" value="Name">
           
             <label for="last_name">Last Name</label>
             <input type="text" id="last_name" name="last_name">
@@ -146,8 +146,11 @@
           </fieldset>
 
 
+        <label for="zip_code">Postal / Zip Code:</label>
+        <input type="text" id="zip_code" name="zip_code" pattern="(\d{5}([\-]\d{4})?)" required title="Please enter a valid zip code, example: 65251" placeholder="65251">
 
-
+        <label for="progess-bar">Percentage Completed:</label>
+        <input type="progress" id="progess-bar" value="50" max="100" >
     </form>
 
 
