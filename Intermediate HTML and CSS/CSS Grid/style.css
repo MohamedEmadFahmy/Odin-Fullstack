@@ -87,8 +87,19 @@
     grid-row: 3 / 6;
 
 
-    /* you can shorten column-start, column-end, rows-start, row-end into 1 attribute */
-    grid-area: 4 / 6 / 3 / 6;
+    /* you can shorten all starts and ends into 1 attribute */
+    /*  This is the order
+        grid-row-start
+        grid-column-start
+        grid-row-end
+        grid-column-end
+    */
+    grid-area: 3 / 4 / 6 / 6;
+
+
+    /* you can also specify the length of the line using "span" */
+
+    grid-row: 3 / span 3;
 }
 
 
@@ -120,3 +131,4 @@
 
 
 */
+
