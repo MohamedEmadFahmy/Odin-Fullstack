@@ -35,3 +35,88 @@
 #container > div{
     outline: red solid 1px;
 } 
+
+
+#container2 {
+    margin-top: 50px;
+    display: inline-grid;
+    grid-template: 40px 40px 40px 40px 40px / 40px 40px 40px 40px 40px;
+    background-color: lightblue;
+}
+
+.room {
+    border: 1px solid;
+    font-size: 50%;
+    text-align: center;
+}
+  
+#living-room {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+#bathroom {
+    /* grid-column-start: 1;
+    grid-column-end: 1; */
+    grid-row-start: 3;
+    grid-row-end: 6;
+}
+
+#bedroom {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 5;
+}
+#closet {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 5;
+    grid-row-end: 6;
+}
+#kitchen {
+    grid-column-start: 4;
+    grid-column-end: 6;
+    grid-row-start: 3;
+    grid-row-end: 6;
+
+
+    /* you can shorten start-end into one attribute */
+    grid-row: 3 / 6;
+
+
+    /* you can shorten column-start, column-end, rows-start, row-end into 1 attribute */
+    grid-area: 4 / 6 / 3 / 6;
+}
+
+
+/* you can also use this notation in order to define the layout */
+
+/* #container {
+    display: inline-grid;
+    grid-template: 40px 40px 40px 40px 40px / 40px 40px 40px 40px 40px;
+    background-color: lightblue; 
+    grid-template-areas:
+      "living-room living-room living-room living-room living-room"
+      "living-room living-room living-room living-room living-room"
+      "bedroom bedroom bathroom kitchen kitchen"
+      "bedroom bedroom bathroom kitchen kitchen"
+      "closet closet . . ."    
+} */
+
+/* #living-room {
+    grid-area:  living-room;
+} */
+
+
+/* 
+    where you specifically give a name to each area in the template-areas
+    then use that name in the grid-area
+
+    NOTE:
+        "." denotes an empty cell
+
+
+*/
