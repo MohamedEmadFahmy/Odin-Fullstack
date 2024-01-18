@@ -132,3 +132,70 @@
 
 */
 
+
+.grid-container {
+    resize: both; /* used in order to allow resizing */
+    overflow: auto;
+    display: grid;
+    gap: 4px;
+    padding: 4px;
+    border: 1px solid grey;
+    background-color: skyblue;
+    
+    /* grid-template-rows: 150px 150px;
+    grid-template-columns: 150px 150px 150px 150px 150px; */
+
+
+    grid-template-columns: repeat(2, 150px);
+    grid-template-rows: repeat(5, 150px);
+
+
+    /* You can use fr to give the elements a fraction of the container instead of a static value in order to make it more responsive */
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 2fr) repeat(3, 1fr);
+
+
+    /* You can use minmax() to specify the smallest and the largest size the grid track can be */
+
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(5, minmax(150px, 200px));
+
+
+    /* You can also use clamp(min-size, default-size, max-size) in order to specify minimum, average, and maximum sizes of an item */
+
+    grid-template-columns: repeat(5, clamp(150px, 20%, 200px));
+
+
+    /* autofit can be used in order to give the grid a number of columns based on a specific width */
+
+    grid-template-columns: repeat(auto-fit, 200px);
+
+
+    /* when used together with minmax() */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    
+    
+    /* autofill works the same way except it doesnt have an upperbound so it will leave a space between the items and the container */
+    /* grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); */
+    
+
+}
+  
+.grid-item {
+    background-color: #444;
+    text-align: center;
+    color: #ddd;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    padding: 12px;
+}
+  
+p {
+    margin: 12px auto 24px;
+}
+  
+img {
+    height: 60px;
+}
+
+
