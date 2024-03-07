@@ -37,7 +37,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var loda
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   myName: () => (/* binding */ myName)\n/* harmony export */ });\nconst myName = (name) => 'Hi! My name is ' + name;\r\n\r\n\n\n//# sourceURL=webpack://webpack-demo/./src/myName.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   myName: () => (/* binding */ myName)\n/* harmony export */ });\n\r\nconst myName = (name) => 'Hi! My name is ' + name;\r\n\n\n//# sourceURL=webpack://webpack-demo/./src/myName.js?");
 
 /***/ })
 
