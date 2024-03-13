@@ -49,6 +49,22 @@ promise1 = new Promise((resolve, reject) => {
 });
 
 // Excute all promises at the same time and wait until one of them finishes
-Promise.race([promise1, promise2, promise3]).then((value) => {
-	console.log(value);
-});
+// Promise.race([promise1, promise2, promise3]).then((value) => {
+// 	console.log(value);
+// });
+
+// fetch method
+fetch("https://official-joke-api.appspot.com/jokes/random")
+	.then((res) => {
+		// console.log(res);
+		res.json()
+			.then((data) => {
+				console.log(data);
+			})
+			.catch(() => {
+				console.log("Error converting to JSON: ");
+			});
+	})
+	.catch((err) => {
+		console.log(err);
+	});
