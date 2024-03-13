@@ -1,26 +1,54 @@
 //  Example of callback function
-const myDiv = document.getElementById("myDiv");
+// const myDiv = document.getElementById("myDiv");
 
-myDiv.addEventListener("click", function () {
-	// do something!
-});
+// myDiv.addEventListener("click", function () {
+// 	// do something!
+// });
 
 // How to use promises:
 
-const getData = function () {
-	// go fetch data from some API...
-	// clean it up a bit and return it as an object:
-	return data;
-};
+// 1. Create a new promise
 
-// As myData might not be available immediately, we use a promise to handle it
-// const myData = getData();
-// const pieceOfData = myData["whatever"];
+// let fail = false;
 
-const myData = getData(); // if this is refactored to return a Promise...
+// const myPromise = new Promise((resolve, reject) => {
+// 	if (fail) {
+// 		reject("I failed");
+// 	} else {
+// 		resolve("I succeeded");
+// 	}
+// });
 
-myData.then(function (data) {
-	// .then() tells it to wait until the promise is resolved
-	const pieceOfData = data["whatever"]; // and THEN run the function inside
-	console.log(pieceOfData);
+// myPromise
+// 	.then((message) => {
+// 		console.log(message);
+// 	})
+// 	.catch((message) => {
+// 		console.log(message);
+// 	});
+
+let promise1 = new Promise((resolve, reject) => {
+	resolve("Promise 1 succeeded");
+});
+let promise2 = new Promise((resolve, reject) => {
+	resolve("Promise 2 succeeded");
+});
+let promise3 = new Promise((resolve, reject) => {
+	resolve("Promise 3 succeeded");
+});
+
+// Excute all promises at the same time and wait until they all finish
+// Promise.all([promise1, promise2, promise3]).then((values) => {
+// 	console.log(values);
+// });
+
+promise1 = new Promise((resolve, reject) => {
+	setTimeout(() => {
+		resolve("Promise 1 succeeded");
+	}, 1000);
+});
+
+// Excute all promises at the same time and wait until one of them finishes
+Promise.race([promise1, promise2, promise3]).then((value) => {
+	console.log(value);
 });
