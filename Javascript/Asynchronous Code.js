@@ -100,6 +100,91 @@ promise1 = new Promise((resolve, reject) => {
 // 	});
 
 // To use cors
-fetch("url.url.com/api", {
-	mode: "cors",
+// fetch("url.url.com/api", {
+// 	mode: "cors",
+// });
+
+// How to use async and await:
+
+const server = {
+	people: [
+		{
+			name: "Odin",
+			age: 20,
+		},
+		{
+			name: "Thor",
+			age: 35,
+		},
+		{
+			name: "Freyja",
+			age: 29,
+		},
+	],
+
+	getPeople() {
+		return new Promise((resolve, reject) => {
+			// Simulating a delayed network call to the server
+			setTimeout(() => {
+				resolve(this.people);
+			}, 2000);
+		});
+	},
+};
+
+// this
+function getPersonsInfo(name) {
+	return server.getPeople().then((people) => {
+		return people.find((person) => {
+			return person.name === name;
+		});
+	});
+}
+
+// Can be transformed to this
+
+async function getPersonsInfo(name) {
+	const people = await server.getPeople();
+	const person = people.find((person) => {
+		return person.name === name;
+	});
+	return person;
+}
+
+// You can use this to catch erros in async functions
+asyncFunctionCall().catch((err) => {
+	console.error(err);
 });
+
+// OR:
+
+async function getPersonsInfo(name) {
+	try {
+		const people = await server.getPeople();
+		const person = people.find((person) => {
+			return person.name === name;
+		});
+		return person;
+	} catch (error) {
+		// Handle the error any way you'd like
+	}
+}
+
+// You can use async and await with loops
+const fruitLoop = async () => {
+	const fruits = ["apple", "banana", "pear"];
+	for await (let fruit of fruits) {
+		console.log(fruit);
+	}
+};
+
+// And if statments!!
+const fruitInspection = async () => {
+	const fruit = getFruit();
+
+	if ((await fruit) === "apple") {
+		console.log("It's an apple!");
+	} else {
+		console.log("It's not an apple!");
+	}
+};
