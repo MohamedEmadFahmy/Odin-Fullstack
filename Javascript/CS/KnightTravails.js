@@ -50,8 +50,50 @@
 // knightMoves([3, 3], [0, 0]);
 // knightMoves([0, 0], [7, 7]);
 
+function isValidMove(move) {
+	return move[0] >= 0 && move[0] < 8 && move[1] >= 0 && move[1] < 8;
+}
+
 const knightMoves = (start, end) => {
-	console.log("Implement :)");
+	// console.log("Implement :)");
+	let queue = [];
+
+	let moves = [
+		[1, 2],
+		[1, -2],
+		[-1, 2],
+		[-1, -2],
+		[2, 1],
+		[2, -1],
+		[-2, 1],
+		[-2, -1],
+	];
+
+	queue.push([start]);
+
+	console.log("start");
+
+	while (queue.length > 0) {
+		let currentPath = queue.pop();
+		let currentMove = currentPath[currentPath.length - 1]; //Gets the last move in the path
+
+		if (currentMove[0] === end[0] && currentMove[1] === end[1]) {
+			console.log(currentPath);
+			return;
+		} else {
+			for (let move of moves) {
+				let newMove = [
+					currentMove[0] + move[0],
+					currentMove[1] + move[1],
+				];
+				if (isValidMove(newMove)) {
+					queue.unshift([...currentPath, newMove]);
+				}
+			}
+		}
+	}
+
+	return "No path found";
 };
 
 knightMoves([0, 0], [1, 2]);
