@@ -54,17 +54,52 @@ promise1 = new Promise((resolve, reject) => {
 // });
 
 // fetch method
-fetch("https://official-joke-api.appspot.com/jokes/random")
-	.then((res) => {
-		// console.log(res);
-		res.json()
-			.then((data) => {
-				console.log(data);
-			})
-			.catch(() => {
-				console.log("Error converting to JSON: ");
-			});
-	})
-	.catch((err) => {
-		console.log(err);
-	});
+// fetch("https://official-joke-api.appspot.com/jokes/random")
+// 	.then((res) => {
+// 		// console.log(res);
+// 		res.json()
+// 			.then((data) => {
+// 				console.log(data);
+// 			})
+// 			.catch(() => {
+// 				console.log("Error converting to JSON: ");
+// 			});
+// 	})
+// 	.catch((err) => {
+// 		console.log(err);
+// 	});
+
+// APIs:
+
+// let apiKey = "7d4f312447a2449fb18195331241403";
+//api.weatherapi.com/v1/current.json?key=7d4f312447a2449fb18195331241403&q=London&aqi=no
+// fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=London&aqi=no`)
+// 	.then((response) => {
+// 		// console.log("SUCCESS");
+// 		// console.log(response);
+// 		response.json().then((data) => {
+// 			console.log(data);
+// 		});
+// 	})
+// 	.catch(function (err) {
+// 		console.log(err);
+// 	});
+
+// let giphyApiKey = "TzxP5j3KEVoTdpC6O0cn3nALNlM0zbRZ";
+
+// fetch(`https://api.giphy.com/v1/gifs/translate?api_key=${giphyApiKey}&s=cats`)
+// 	.then((response) => {
+// 		console.log("SUCCESS");
+// 		// console.log(response);
+// 		response.json().then((data) => {
+// 			console.log(data);
+// 		});
+// 	})
+// 	.catch((error) => {
+// 		console.log("Failure");
+// 	});
+
+// To use cors
+fetch("url.url.com/api", {
+	mode: "cors",
+});
