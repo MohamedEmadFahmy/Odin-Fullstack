@@ -1,0 +1,16 @@
+{
+	"name": "jest",
+	"version": "1.0.0",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"test": "set NODE_OPTIONS=--experimental-vm-modules && jest",
+		"watch": "set NODE_OPTIONS=--experimental-vm-modules && jest --watch *.js"
+	},
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"devDependencies": {
+		"jest": "^29.7.0"
+	}
+}
